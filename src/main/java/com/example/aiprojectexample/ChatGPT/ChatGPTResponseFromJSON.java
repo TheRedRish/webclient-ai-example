@@ -1,4 +1,4 @@
-package com.example.aiprojectexample;
+package com.example.aiprojectexample.ChatGPT;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class GPTResponse {
+public class ChatGPTResponseFromJSON {
     public List<Choice> choices;
 
     @Getter
