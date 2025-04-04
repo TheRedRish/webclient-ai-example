@@ -33,6 +33,8 @@ public class ChatGPTRequestReturningJSON extends ChatGPTRequest {
     public static class Function {
         private String name;
         private Parameters parameters;
+
+        // Setting strict to true will ensure function calls reliably adhere to the function schema, instead of being best effort
         private boolean strict = true;
     }
 

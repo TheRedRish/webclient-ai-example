@@ -6,6 +6,7 @@ public interface Parameters {
     Map<String, Object> getProperties();
 
     // All properties must be marked required when strict is true
+    // see https://platform.openai.com/docs/guides/function-calling?api-mode=chat&lang=javascript&strict-mode=enabled#strict-mode
     List<String> getRequired();
     default String getType() {
         return "object";
