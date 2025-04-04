@@ -1,13 +1,20 @@
 package com.example.aiprojectexample.config;
 
 import com.example.aiprojectexample.ChatGPT.ChatGPTRequestReturningJSON;
+import com.example.aiprojectexample.ChatGPT.ChatGPTResponseFromJSON;
+import com.example.aiprojectexample.Model.Recipe;
 import com.example.aiprojectexample.schema.RecipeSchemaAdapter;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
+
+import static com.example.aiprojectexample.Model.Recipe.fromJson;
 
 @Component
 public class StartupConfig implements CommandLineRunner {
@@ -35,18 +42,18 @@ public class StartupConfig implements CommandLineRunner {
                 .top_p(1.0)
                 .build();
 
-//        webClient.post()
-//                .uri("/v1/chat/completions")
-//                .header("Authorization", key)
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .bodyValue(request)
-//                .retrieve()
-//                .bodyToMono(GPTResponse.class)
-//                .subscribe(response -> {
-//                    String name = response.choices.get(0).message.tool_calls.get(0).function.name;
-//                    String argsJson = response.choices.get(0).message.tool_calls.get(0).function.arguments;
-//                    System.out.println("ChatGPT Response: " + name);
-//                    System.out.println(argsJson);
-//                });
+        webClient.post()
+                .uri("/v1/chat/completions")
+                .header("Authorization", key)
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(request)
+                .retrieve()
+                .bodyToMono(ChatGPTResponseFromJSON.class)
+                .subscribe(response -> {
+                    String name = response.choices.get(0).message.tool_calls.get(0).function.name;
+                    Recipe recipe = fromJson(response.choices.get(0).message.tool_calls.get(0).function.arguments);
+                    System.out.println("ChatGPT Response: " + name);
+                    System.out.println(recipe);
+                });
     }
 }
