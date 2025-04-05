@@ -8,6 +8,7 @@ import java.util.List;
 @Getter
 @Setter
 public class ChatGPTResponseFromJSON {
+    // Add more fields as needed, also to nested classes ex. usage(contains token data), model, created
     public List<Choice> choices;
 
     @Getter

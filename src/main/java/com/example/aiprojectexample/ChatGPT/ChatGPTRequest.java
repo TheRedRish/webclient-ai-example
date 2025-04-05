@@ -18,6 +18,7 @@ public class ChatGPTRequest {
     private List<Message> messages;
     private double temperature;
     private double top_p;
+    private int max_completion_tokens;
 
     @Getter
     @Setter
