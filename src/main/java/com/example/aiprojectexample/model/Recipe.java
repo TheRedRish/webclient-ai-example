@@ -1,4 +1,4 @@
-package com.example.aiprojectexample.Model;
+package com.example.aiprojectexample.model;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

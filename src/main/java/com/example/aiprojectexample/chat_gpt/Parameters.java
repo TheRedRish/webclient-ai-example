@@ -1,4 +1,4 @@
-package com.example.aiprojectexample.ChatGPT;
+package com.example.aiprojectexample.chat_gpt;
 import java.util.List;
 import java.util.Map;
 

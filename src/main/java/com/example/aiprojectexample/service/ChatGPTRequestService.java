@@ -1,15 +1,12 @@
 package com.example.aiprojectexample.service;
 
-import com.example.aiprojectexample.ChatGPT.ChatGPTRequestReturningJSON;
-import com.example.aiprojectexample.ChatGPT.ChatGPTResponseFromJSON;
-import com.example.aiprojectexample.Model.Recipe;
-import com.example.aiprojectexample.Model.Weather;
+import com.example.aiprojectexample.chat_gpt.ChatGPTRequestReturningJSON;
+import com.example.aiprojectexample.chat_gpt.ChatGPTResponseFromJSON;
+import com.example.aiprojectexample.model.Recipe;
 import com.example.aiprojectexample.schema.RecipeSchemaAdapter;
-import com.example.aiprojectexample.schema.WeatherSchemaAdapter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;

@@ -1,6 +1,6 @@
 package com.example.aiprojectexample.schema;
 
-import com.example.aiprojectexample.ChatGPT.Parameters;
+import com.example.aiprojectexample.chat_gpt.Parameters;
 
 import java.util.List;
 import java.util.Map;
